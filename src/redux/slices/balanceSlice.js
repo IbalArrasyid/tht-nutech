@@ -1,4 +1,3 @@
-// src/redux/slices/balanceSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const balanceSlice = createSlice({

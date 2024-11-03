@@ -1,4 +1,3 @@
-// src/components/Transactions.js
 import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import Saldo from '../components/Saldo';
@@ -13,7 +12,7 @@ const Transactions = () => {
         try {
             setLimit(limit)
             const token = localStorage.getItem('token');
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/transaction/history?offset=0&limit=${limit}`, {
+            const response = await fetch('https://take-home-test-api.nutech-integrasi.com/transaction/history?offset=0&limit=25', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

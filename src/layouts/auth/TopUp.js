@@ -1,4 +1,3 @@
-// src/components/TopUp.js
 import React, { useState } from 'react';
 import Saldo from '../components/Saldo';
 import Swal from 'sweetalert2';
@@ -48,7 +47,7 @@ const TopUp = () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/topup`, {
+            const response = await fetch('https://take-home-test-api.nutech-integrasi.com/topup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,7 +56,6 @@ const TopUp = () => {
                 body: JSON.stringify({ top_up_amount: amount }),
             });
 
-            // const data = await response.json();
             if (response.ok) {
                 Swal.fire({
                     icon: "success",

@@ -1,4 +1,3 @@
-// src/components/Profile.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -15,7 +14,7 @@ const Profile = () => {
 
     const fetchUserProfile = async () => {
         const token = localStorage.getItem('token');
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/profile`, {
+        const response = await fetch('https://take-home-test-api.nutech-integrasi.com/profile', {
             headers: { Authorization: `Bearer ${token}` },
         });
         const data = await response.json();
@@ -38,7 +37,7 @@ const Profile = () => {
     const handleSave = async () => {
         const token = localStorage.getItem('token');
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/profile/update`, {
+            const response = await fetch('https://take-home-test-api.nutech-integrasi.com/profile/update', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -142,7 +141,7 @@ const Profile = () => {
                     const formData = new FormData();
                     formData.append('file', file);
 
-                    const response = await fetch(`${process.env.REACT_APP_API_URL}/profile/image`, {
+                    const response = await fetch('https://take-home-test-api.nutech-integrasi.com/profile/image', {
                         method: 'PUT',
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -187,7 +186,7 @@ const Profile = () => {
                     />
                     <label role='button' htmlFor="file-upload" className="position-absolute" style={{ bottom: '10px', right: '10px' }}>
                         <i className="bi bi-pencil-fill border border-1 border-black" style={{ fontSize: '16px', backgroundColor: 'white', padding: '5px 7.5px', borderRadius: '50%' }}></i>
-                        <form action={`${process.env.REACT_APP_API_URL}/profile/update`} method="put">
+                        <form action={'https://take-home-test-api.nutech-integrasi.com/profile/update'} method="put">
                             <input
                                 name='foto_profile'
                                 id="file-upload"

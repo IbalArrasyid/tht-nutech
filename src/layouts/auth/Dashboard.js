@@ -1,4 +1,3 @@
-// src/components/Dashboard.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Saldo from '../components/Saldo';
@@ -20,13 +19,13 @@ const Dashboard = () => {
                 const headers = { Authorization: `Bearer ${token}` };
 
                 // Fetch services
-                const servicesResponse = await fetch(`${process.env.REACT_APP_API_URL}/services`, { headers });
+                const servicesResponse = await fetch('https://take-home-test-api.nutech-integrasi.com/services', { headers });
                 if (!servicesResponse.ok) throw new Error('Services fetch failed');
                 const servicesData = await servicesResponse.json();
                 setServices(servicesData.data);
 
                 // Fetch banner
-                const bannerResponse = await fetch(`${process.env.REACT_APP_API_URL}/banner`, { headers });
+                const bannerResponse = await fetch('https://take-home-test-api.nutech-integrasi.com/banner', { headers });
                 if (!bannerResponse.ok) throw new Error('Banner fetch failed');
                 const bannerData = await bannerResponse.json();
                 setBanner(bannerData.data);

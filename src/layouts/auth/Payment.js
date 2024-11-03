@@ -1,4 +1,3 @@
-// src/components/Payment.js
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
@@ -35,7 +34,7 @@ const Payment = () => {
     const handlePayment = async () => {
         const token = localStorage.getItem('token');
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/transaction`, {
+            const response = await fetch('https://take-home-test-api.nutech-integrasi.com/transaction', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

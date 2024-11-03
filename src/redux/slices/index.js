@@ -1,4 +1,3 @@
-// src/redux/slices/index.js
 import { combineReducers } from 'redux';
 import reducer from './slice';
 
